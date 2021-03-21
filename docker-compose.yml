@@ -1,0 +1,32 @@
+version: '2'
+services:
+  db:
+    image: mariadb
+    volumes:
+      - "./data/db:/var/lib/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypassword
+
+  web70:
+    build: "images/web70"
+    volumes:
+      - "./www:/var/www/html"
+    depends_on:
+      - db
+    links:
+      - db
+    ports:
+      - "8070:80"
+
+  web56:
+    build: "images/web56"
+    volumes:
+      - "./www:/var/www/html"
+    depends_on:
+      - db
+    links:
+      - db
+    ports:
+      - "8056:80"
