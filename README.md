@@ -56,7 +56,7 @@ To close the attached terminal mode just press `Ctrl + C`
   | 78e528453ced |  mariadb                   | ... | docker_db_1  |
   
 - Copy the `CONTAINER ID` of the mariadb image and then replace it in the following command:\
- `docker exec -i <CONTAINER ID> mysql -u <MYSQL_USER> -p <MYSQL_PASSWORD> <DATABASE_NAME> < mysql-dump.sql`
+ `cat mysql_dump.sql | docker exec -i <CONTAINER ID> mysql -u <MYSQL_USER> -p <MYSQL_PASSWORD> <DATABASE_NAME>`
 - Perfect! Your db is now fully populated. 
 
 #### Stoppping the containers
