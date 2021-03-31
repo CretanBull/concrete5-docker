@@ -47,18 +47,11 @@ To close the attached terminal mode just press `Ctrl + C`
   > `localhost:8056` => PHP 5.6
 
 #### Importing an existing db dump
-- Get the docker id of the postgres container:\
-  `docker ps`
-  
-  Output will be similar to the following:
-  | CONTAINER ID |  IMAGE                     | ... |  NAMES       |
-  | ------------ | -------------------------- | --- |------------- |
-  | 78e528453ced |  mariadb                   | ... | docker_db_1  |
-  
-- Copy the `CONTAINER ID` of the mariadb image and then replace it in the following command:\
- `cat mysql_dump.sql | docker exec -i <CONTAINER ID> mysql -u root --password=root <DATABASE_NAME>`
-- Now login into the mariadb container and grant previledges to your mysql user to the new db that you created via root user
-- Perfect! Your db is now fully populated. 
+- Visit `localhost:8000` in your browser
+- This will open up the login screen of phpmyadmin. Enter the following credentails:
+  > `username: root`\
+  > `password: root`
+- Once you're logged into phpmyadmin you could easily import and alter your database. 
 
 #### Stoppping the containers
 - You can always stop the containers once you're done with the project with the following command:\
