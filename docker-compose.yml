@@ -38,5 +38,6 @@ services:
     environment:
       - PMA_ARBITRARY=1
       - PMA_HOST=db
+      - UPLOAD_LIMIT=300M
     depends_on:
       - db
